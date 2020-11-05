@@ -16,19 +16,19 @@ const app = new Clarifai.App({
 });
 
 const initialState = {
-      input:'',
-      imageUrl: '',
-      box: {},
-      route: 'signin',
-      isSignedIn: false,
-      user: {
-       id: '',
-       name: '',
-       email: '',
-       entries: 0,
-       joined: ''
-      }
-    }
+  input: '',
+  imageUrl: '',
+  box: {},
+  route: 'signin',
+  isSignedIn: false,
+  user: {
+    id: '',
+    name: '',
+    email: '',
+    entries: 0,
+    joined: ''
+  }
+}
 
 class App extends Component {
   constructor() {
@@ -36,8 +36,8 @@ class App extends Component {
     this.state = initialState;
   }
 
-   loadUser = (data) => {
-    this.setState ({user: {
+  loadUser = (data) => {
+    this.setState({user: {
       id: data.id,
       name: data.name,
       email: data.email,
@@ -77,7 +77,7 @@ onButtonSubmit = () => {
         this.state.input)
     .then(response => {
       if (response) {
-        fetch('http://localhost:3000/image', {
+        fetch('https://quiet-thicket-96458.herokuapp.com/image', {
           method: 'put',
           headers: {'Content-Type':'application/json'},
           body: JSON.stringify({
