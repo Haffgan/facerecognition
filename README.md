@@ -1,4 +1,4 @@
-App allows to find faces on pictures.
+App allows to recognize faces on pictures.
 
 website URL: https://smart-brain-1-1.herokuapp.com/
 
